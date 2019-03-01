@@ -1,0 +1,39 @@
+$fa-font-path: "~font-awesome/fonts";
+@import url(https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic);
+// Color
+$white:                     #fff !default;
+$black:                     #000 !default;
+$dark-blue:                 #093149 !default;
+$grey:                      #f3f5f6;
+
+// Reassign color vars to semantic color scheme
+// $brand-primary:             $blue !default;
+//$brand-primary:             $mid-blue !default;
+//$brand-success:             $green !default;
+//$brand-info:                $teal !default;
+//$brand-warning:             $orange !default;
+//$brand-danger:              $red !default;
+//$brand-inverse:             $gray-darker !default;
+
+
+// Layout color
+$headerColor:             $dark-blue !default;
+$bodyColor:               $grey !default;
+$cursor-disabled:          not-allowed !default;
+
+$custom-control-disabled-cursor:    $cursor-disabled !default;
+
+@mixin btn-admin($color, $hover-color) {
+  color: $white !important;
+  background-color: $color;
+  border-radius: 30px;
+  border-color: $color;
+  font-weight: bold;
+  cursor: pointer;
+  &:hover {
+    border-color: $hover-color;
+    background-color: $hover-color;
+    color: $white !important;
+  }
+}
+

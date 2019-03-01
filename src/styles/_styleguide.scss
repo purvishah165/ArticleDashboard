@@ -1,0 +1,71 @@
+// Header styles
+.site-header{
+  background-color: $headerColor;
+}
+.main-logo{
+  max-height: 26px;
+}
+
+//articles dashboard
+.articles {
+  display:flex;
+  flex-wrap:wrap;
+  margin: -1.25em 0 0 -1.25em;
+}
+
+.article {
+  background:white;
+  margin: 1.25em 0 0 1.25em;
+  width: calc(33.3333% - 1.25em);
+  border-radius: 4px;
+  box-shadow: 0px 0px 20px rgba(0,0,0,0.05);
+  &--wide {
+    width: 100%;
+  }
+  &__img{
+    max-height: 70px;
+
+  }
+  &__details {
+    padding: 2rem;
+    p {
+      line-height: 1.2;
+      margin-bottom: 0;
+    }
+  }
+  @media all and (max-width: 850px) {
+    width: calc(50% - 1.25em);
+  }
+  @media all and (max-width: 550px) {
+    width: 100%;
+  }
+}
+
+.article__actions {
+  margin-bottom: 50px;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.article__action {
+  font-size: 10px;
+  svg {
+    width: 25px;
+    fill: white
+  }
+  &--edit {
+    a {
+      border-bottom: 0;
+    }
+  }
+}
+
+
+.article__hero {
+  position: relative;
+  padding: 0 10px 0 10px;
+  text-align: center;
+}

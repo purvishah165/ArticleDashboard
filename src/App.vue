@@ -1,31 +1,32 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-    <div v-for="data in $options.json">{{data}}</div>
+    <company-header></company-header>
+    <articles-dashboard></articles-dashboard>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-import JSON from './helpers/sample'
+import CompanyHeader from './components/CompanyHeader/CompanyHeader'
+import ArticlesDashboard from './components/ArticlesDashboard/ArticlesDashboard'
 
 export default {
-  json: JSON,
   name: 'app',
   components: {
-    HelloWorld
+      ArticlesDashboard,
+      CompanyHeader
   }
 }
 </script>
 
-<style>
+<style lang="scss">
+  @import "~@/style";
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: 'PT Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 40px;
+  padding: 40px 0px;
+  background-color: $bodyColor;
 }
 </style>
