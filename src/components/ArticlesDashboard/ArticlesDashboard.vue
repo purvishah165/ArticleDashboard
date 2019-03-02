@@ -107,6 +107,7 @@
                 }
             },
             paginate (articles) {
+                // here it is assumed that on a page a max of 6 articles should be displayed.
                 let page = this.page;
                 let perPage = this.perPage;
                 let from = (page * perPage) - perPage;
