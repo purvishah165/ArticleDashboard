@@ -5,6 +5,9 @@ $white:                     #fff !default;
 $black:                     #000 !default;
 $dark-blue:                 #093149 !default;
 $grey:                      #f3f5f6;
+$dark-grey:                 #5d7888;
+$light-blue:                #259be4;
+$blue:                      #1f77bc;
 
 // Reassign color vars to semantic color scheme
 // $brand-primary:             $blue !default;
@@ -19,6 +22,7 @@ $grey:                      #f3f5f6;
 // Layout color
 $headerColor:             $dark-blue !default;
 $bodyColor:               $grey !default;
+$linkColor:               $light-blue !default;
 $cursor-disabled:          not-allowed !default;
 
 $custom-control-disabled-cursor:    $cursor-disabled !default;
