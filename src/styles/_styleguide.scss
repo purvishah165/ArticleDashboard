@@ -5,7 +5,19 @@
 .main-logo{
   max-height: 26px;
 }
-
+.fixed-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
+.header{
+  width: 100%;
+  padding: 10px 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
 .masthead {
   padding-top: 40px;
   padding-bottom: 80px;
@@ -55,6 +67,9 @@
     line-height: 13px;
     text-transform: uppercase;
     letter-spacing: 0.8333333px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   @media all and (max-width: 850px) {
     width: calc(50% - 1.25em);
@@ -108,9 +123,26 @@
   }
 }
 
-.content > * {
-  justify-content: center;
+.pagination > button {
+  border: none;
+  display: inline-block;
+  padding: 8px 16px;
+  cursor: pointer;
+  color: white;
+  background-color: gray;
+  border-radius: 4px;
+  margin: 0 2px;
+}
 
+.pagination {
+  justify-content: center;
+}
+
+.navbar {
+  text-align: left;
+}
+
+.content > *, .navbar {
   @media (min-width: 576px) {
     padding-left: 40px;
     padding-right: 40px;
@@ -127,4 +159,7 @@
     padding-left: 160px;
     padding-right: 160px;
   }
+}
+.add-margin{
+  margin-left: 5px;
 }

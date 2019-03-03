@@ -1,4 +1,5 @@
-# A dashboard for list of articles, giving ability to filter out list according to categories.
+# A VueJS application which displays a dashboard for list of articles,
+  giving ability to filter out list according to categories.
 
 ## Project setup
 ```

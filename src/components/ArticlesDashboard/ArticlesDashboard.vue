@@ -36,14 +36,21 @@
                 </div>
                 <div>
                     <p class="article__info">Read More <img src="@/assets/arrow.png"/></p>
-                    <p class="article__time"><img src="@/assets/timer.png"/> {{getReadTime(data.word_count)}}</p>
+                    <p class="article__time">
+                        <span>
+                            <img src="@/assets/timer.png"/>
+                        </span>
+                        <span class="add-margin">
+                            {{getReadTime(data.word_count)}}
+                        </span>
+                    </p>
                 </div>
             </div>
         </div>
-        <div class="clearfix btn-group col-md-2 mt-4" v-if="pages.length > 1">
-            <button type="button" class="btn btn-sm btn-outline-secondary" v-if="page != 1" @click="page--"> << </button>
-            <button type="button" class="btn btn-sm btn-outline-secondary" v-for="pageNumber in pages.slice(page-1, page+5)" @click="page = pageNumber"> {{pageNumber}} </button>
-            <button type="button" @click="page++" v-if="page < pages.length" class="btn btn-sm btn-outline-secondary"> >> </button>
+        <div class="pagination" v-if="pages.length > 1">
+            <button type="button" v-if="page != 1" @click="page--"> << </button>
+            <button type="button" v-for="pageNumber in pages.slice(page-1, page+5)" @click="page = pageNumber"> {{pageNumber}} </button>
+            <button type="button" @click="page++" v-if="page < pages.length"> >> </button>
         </div>
     </div>
 </template>
