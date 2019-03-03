@@ -1,28 +1,30 @@
 <template>
-    <div class="container">
-        <h2 class="font-weight-bold">You're in good company</h2>
-        <div class="filters">
-            <span class="text-uppercase">Filter by:</span>
-            <select v-model="appliedFilters.industry" @change="applyFilters()">
-                <option v-if="!appliedFilters.industry" selected="selected" :value="undefined">Industries</option>
-                <option v-if="appliedFilters.industry" :value="undefined" class="link-filter">Clear</option>
-                <option v-for="(key, value) in filters.industries" :value="value">{{value}} ({{key}})</option>
-            </select>
-            <select v-model="appliedFilters.location" @change="applyFilters()">
-                <option v-if="!appliedFilters.location" selected="selected" :value="undefined">Locations</option>
-                <option v-if="appliedFilters.location" :value="undefined" class="link-filter">Clear</option>
-                <option v-for="(key, value) in filters.locations" :value="value">{{value}} ({{key}})</option>
-            </select>
-            <select v-model="appliedFilters.company_size" @change="applyFilters()">
-                <option v-if="!appliedFilters.company_size" selected="selected" :value="undefined">Company Size</option>
-                <option v-if="appliedFilters.company_size" :value="undefined" class="link-filter">Clear</option>
-                <option v-for="(key, value) in filters.companySizes" :value="value">{{value}} ({{key}})</option>
-            </select>
-            <select v-model="appliedFilters.use_case" @change="applyFilters()">
-                <option v-if="!appliedFilters.use_case" selected="selected" :value="undefined">Use Case</option>
-                <option v-if="appliedFilters.use_case" :value="undefined" class="link-filter">Clear</option>
-                <option v-for="(key, value) in filters.useCases" :value="value">{{value}} ({{key}})</option>
-            </select>
+    <div class="content">
+        <div class="masthead">
+            <h2 class="font-weight-bold">You're in good company</h2>
+            <div class="filters">
+                <span class="text-uppercase">Filter by:</span>
+                <select v-model="appliedFilters.industry" @change="applyFilters()">
+                    <option v-if="!appliedFilters.industry" selected="selected" :value="undefined">Industries</option>
+                    <option v-if="appliedFilters.industry" :value="undefined" class="link-filter">Clear</option>
+                    <option v-for="(key, value) in filters.industries" :value="value">{{value}} ({{key}})</option>
+                </select>
+                <select v-model="appliedFilters.location" @change="applyFilters()">
+                    <option v-if="!appliedFilters.location" selected="selected" :value="undefined">Locations</option>
+                    <option v-if="appliedFilters.location" :value="undefined" class="link-filter">Clear</option>
+                    <option v-for="(key, value) in filters.locations" :value="value">{{value}} ({{key}})</option>
+                </select>
+                <select v-model="appliedFilters.company_size" @change="applyFilters()">
+                    <option v-if="!appliedFilters.company_size" selected="selected" :value="undefined">Company Size</option>
+                    <option v-if="appliedFilters.company_size" :value="undefined" class="link-filter">Clear</option>
+                    <option v-for="(key, value) in filters.companySizes" :value="value">{{value}} ({{key}})</option>
+                </select>
+                <select v-model="appliedFilters.use_case" @change="applyFilters()">
+                    <option v-if="!appliedFilters.use_case" selected="selected" :value="undefined">Use Case</option>
+                    <option v-if="appliedFilters.use_case" :value="undefined" class="link-filter">Clear</option>
+                    <option v-for="(key, value) in filters.useCases" :value="value">{{value}} ({{key}})</option>
+                </select>
+            </div>
         </div>
         <div class="articles">
             <div class="article" v-for="data in displayedArticles">
@@ -54,7 +56,7 @@
             return {
                 articles: [],
                 page: 1,
-                perPage: 6,
+                perPage: 9,
                 pages: [],
                 filters: {
                     industries: {},
@@ -107,7 +109,7 @@
                 }
             },
             paginate (articles) {
-                // here it is assumed that on a page a max of 6 articles should be displayed.
+                // here it is assumed that on a page a max of 9 articles should be displayed.
                 let page = this.page;
                 let perPage = this.perPage;
                 let from = (page * perPage) - perPage;
